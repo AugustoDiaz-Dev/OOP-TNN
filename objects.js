@@ -1,27 +1,23 @@
-// How to update an Object?
+// Create a class 
 
-const userOne = {
-    // Properties
-    email: 'lennonjohn@gmail.com',
-    name: 'John',
-    // Methods
-    login() {
-        console.log(`${this.email} has logged in.`);
-    },
-    logout() {
-        console.log(`${this.email} has logged out.`);
+class User {
+    constructor(email, name) {
+        this.email = email;
+        this.name = name;
     }
 }
 
-userOne.name = 'John Lennon'; // Update a value with dot notation
-userOne['email'] = 'johnlennon@mail.ru' // Update a value with bracket notation
+const user1 = new User('paulmaccartney@gmail.com', 'Paul McCartney');
+const user2 = new User('ringostarr@gmail.com', 'Ringo Starr');
+const user3 = new User('georgeharrison@gmail.com', 'George Harrison');
+const user4 = new User('johnlennon@gmail.com', 'John Lennon');
 
-userOne.age = 81; // Add a new property
-userOne.logInfo = function () {
-    console.log('Adding information about the user')
-} // Add a new method
+console.log(user1);
+console.log(user2);
+console.log(user3);
+console.log(user4);
 
-console.log(userOne.email);
-console.log(userOne.name);
-userOne.login();
-userOne.logout();
+// The 'new' keyword.
+// It creates a new empty object {}
+// It sets the value of 'this' to be the new empty object
+// It calls the constructor method
