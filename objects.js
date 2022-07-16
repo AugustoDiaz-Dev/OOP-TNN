@@ -1,4 +1,4 @@
-// Method Chaining
+// Class Inheritance
 
 class User {
     // In the constructor, we can set the properties of the object
@@ -23,9 +23,21 @@ class User {
     }
 }
 
-const user1 = new User('paulmaccartney@gmail.com', 'Paul McCartney');
-const user2 = new User('ringostarr@gmail.com', 'Ringo Starr');
-const user3 = new User('georgeharrison@gmail.com', 'George Harrison');
-const user4 = new User('johnlennon@gmail.com', 'John Lennon');
+class Admin extends User {
+    deleteUser(user) {
+        users = users.filter(u => {
+            return u.email != user.email
+        });
+    }
+}
 
-user1.login().updateScore().updateScore().logout();
+var user1 = new User('paulmaccartney@gmail.com', 'Paul McCartney');
+var user2 = new User('ringostarr@gmail.com', 'Ringo Starr');
+var admin = new Admin('augustordiaz@gmail.com', 'Augusto Diaz');
+
+var users = [user1, user2, admin];
+
+admin.deleteUser(user2);
+// user2.deleteUser(user1); // won't work because ordinary users don't have that method
+
+console.log(users);
